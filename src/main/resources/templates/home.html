@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Refresh" th:content="${interval}">
+    <title>Jupiter Systems Monitoring</title>
+    <link rel="stylesheet" th:href="@{../css/homestyle.css}"/>
+    <script th:src="@{../js/btnaction.js}"></script>
+</head>
+<body>
+<header>
+    <h1>JUPITER Systems Monitoring</h1>
+</header>
+
+<div th:if="${#lists.isEmpty(errors)}" class="noerrors">
+    <h2>NO ERRORS FOUND!</h2>
+    <br>
+    <img src="img/backtowork.png" alt="back to work">
+    <br>
+    <div th:text="${lastChecked}" class="lastcheck"></div>
+</div>
+<div class="container">
+
+    <div th:unless="${#lists.isEmpty(errors)}" class="row tableheader">
+        <div class="item1 col hdi">ERROR CLASS</div>
+        <div class="item2 col hdi">ERROR PROVIDER</div>
+        <div class="item3 col hdi">ERROR DESCRIPTION</div>
+        <div class="item4 col hdi">DATE STARTED</div>
+        <div class="item5 col hdi">DATE LAST UPDATED</div>
+        <div class="item6 col hdi hd6"></div>
+    </div>
+    <div th:each="err : ${errors}" class="row">
+        <div th:class="${err.getERR_CLASS() + ' item1 col'}" th:text="${err.ERR_CLASS}"></div>
+        <div th:class="${err.getERR_CLASS() + ' item2 col'}" th:text="${err.ERR_CATEGORY}"></div>
+        <div th:class="${err.getERR_CLASS() + ' item3 col'}" th:text="${err.ERR_DESCRIPTION}"></div>
+        <div th:class="${err.getERR_CLASS() + ' item4 col'}" th:text="${#temporals.format(err.DATE_STARTED,
+        'HH:mm:ss / dd-MMM-yyyy')}"></div>
+        <div th:class="${err.getERR_CLASS() + ' item5 col'}" th:text="${#temporals.format(err.DATE_UPDATED,
+        'HH:mm:ss / dd-MMM-yyyy')}"></div>
+        <button class="btn item6 col" role="button" onclick="deleteRow(this)">Delete</button>
+    </div>
+
+</div>
+
+
+</body>
+</html>

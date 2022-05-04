@@ -1,0 +1,164 @@
+body {
+    background-color: rgb(24, 24, 38);
+    color: rgb(201, 201, 221);
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+}
+h2 {
+    text-align: center;
+    font-size: 3em;
+}
+
+.noerrors {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.lastcheck {
+    font-size: 3em;
+    text-align: center;
+}
+img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.container {
+    display: grid;
+    grid-template-columns: 10% 15% 25% 20% 20% 10%;
+    grid-gap: 0.1em;
+    align-content: center;
+}
+.tableheader {
+    height: 2em;
+    font-size: 2em;
+    text-align: center;
+    color:  rgb(24, 24, 38);
+}
+.hdi {
+    background-color: rgb(201, 201, 221);
+    vertical-align: middle;
+}
+/*.hd6 {*/
+/*    background-color: rgb(24, 24, 38);*/
+/*}*/
+.row {
+    display: contents;
+    height: 2em;
+}
+@keyframes blinking {
+    0% { background-color: white; color: black;}
+    49% { background-color: white; color: black;}
+    50% { background-color: red; color: white;}
+    100% { background-color: red; color: white }
+}
+.ERROR {
+    animation: blinking 0.7s infinite;
+    text-align: center;
+    font-size: 2em;
+}
+
+
+
+.INFO {
+    background-color: rgb(44, 99, 44);
+    color:white;
+    text-align: center;
+    font-size: 2em;
+    /*height: 2em;*/
+}
+.WARNING {
+    background-color: orange;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+}
+
+.SEVERE {
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+}
+
+.btn {
+    appearance: auto;
+    backface-visibility: hidden;
+    background-color: #405cf5;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+    font-size: 100%;
+}
+
+@media all and (orientation: portrait) {
+
+    h2 {
+        font-size: 3em;
+        text-align: center;
+    }
+    .tableheader {
+        height: 1em;
+        font-size: 1em;
+    }
+    .hdi {
+        font-size: 2em;
+    }
+    .container {
+        grid-template-columns: 100%;
+        display: grid;
+        grid-gap: 0.1em;
+    }
+    .row {
+        display: grid;
+        grid-template-columns: 12% 40% 40% 8%;
+        grid-gap: 0.1em;
+        height: 8em;
+    }
+
+    .item1 {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        font-size: 1.5em;
+    }
+    .item2 {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    .item3 {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 3;
+        grid-column-end: 4;
+    }
+    .item4 {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    .item5 {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 3;
+        grid-column-end: 4;
+    }
+    .item6 {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 4;
+        grid-column-end: 5;
+    }
+
+}
